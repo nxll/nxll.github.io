@@ -58,7 +58,7 @@
     }
 
     img {
-        width: 50%;
+        width: 100%;
         padding-top: 8px;
     }
 
@@ -73,20 +73,19 @@
     }
 
     #content {
-        display: flex;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
         padding-top: 40px;
         padding-bottom: 30px;
         margin-left: 10px;
         margin-right: 10px;
-        gap: 10px;
         z-index: 0;
     }
 
     #contentblock {
         border: 2px solid #292927;
         padding: 20px;
-        flex: 1 1 calc(50% - 40px);
         box-sizing: border-box;
     }
 
