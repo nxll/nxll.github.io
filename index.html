@@ -58,7 +58,7 @@
     }
 
     img {
-        width: 50%;
+        width: 100%;
         padding-top: 8px;
     }
 
@@ -74,7 +74,7 @@
 
     #content {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
         gap: 10px;
         padding-top: 40px;
         padding-bottom: 30px;
@@ -87,6 +87,7 @@
         border: 2px solid #292927;
         padding: 20px;
         box-sizing: border-box;
+        transition: all .3s ease-in-out;
     }
 
     #footer {
