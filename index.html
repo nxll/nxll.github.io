@@ -13,16 +13,16 @@
         color: #B8B9B4;
         font-family: 'Fira Code', monospace;
         font-size: 12px;
-		-webkit-font-smoothing : none;
-		font-smooth: never;
+        -webkit-font-smoothing : none;
+        font-smooth: never;
     }
 
-	pre {
-		font-family: 'Fira Code', monospace;
-		font-size: 12px;
-		-webkit-font-smoothing: none;
-		font-smooth: never;
-	}
+    pre {
+        font-family: 'Fira Code', monospace;
+        font-size: 12px;
+        -webkit-font-smoothing: none;
+        font-smooth: never;
+    }
     
     a, a:visited, a:active {
         background: #2E2E2C;
@@ -66,107 +66,116 @@
     #bar {
         background: #292927;
         position: fixed;
-		width: 100%;
-        padding:8px;
+        width: 100%;
+        padding: 8px;
         top: 0px;
         left: 0px;
-        z-index: 2;
+        z-index: 1;
     }
 
     #content {
-        position: relative;
+        display: flex;
+        flex-wrap: wrap;
         padding-top: 40px;
         padding-bottom: 30px;
         margin-left: 10px;
         margin-right: 10px;
-        width: 100%;
+        gap: 10px;
         z-index: 0;
     }
 
     #contentblock {
-        border: 1px solid #2E2E2C;
-        padding: 10px;
-        margin: 10px;
+        border: 2px solid #292927;
+        padding: 20px;
+        flex: 10 10 calc(50% - 40px);
+        box-sizing: border-box;
     }
 
     #footer {
         background: #21211F;
         position: fixed;
-		width: 100%;
+        width: 100%;
         bottom: 0px;
         left: 0px;
         padding: 8px;
-        z-index: 2;
+        z-index: 1;
     }
 </style>
 </head>
 
 <body>
-	<div id="bar">
-		<b><a href="https://nxll.github.io" class="bt">BJRNULFR</a></b> <a href="https://github.com/nxll" target="_blank">git</a> <a href="https://twitter.com/ibjornulfr" target="_blank">tweet</a> <a href="mailto:ibjornwulff@vivaldi.net">mail</a> <a href="">  +  </a>
-	</div>
+    <div id="bar">
+        <b><a href="https://nxll.github.io" class="bt">BJRNULFR</a></b>
+        <a href="https://github.com/nxll" target="_blank">github</a>
+        <a href="https://twitter.com/ibjornulfr" target="_blank">x</a>
+        <a href="https://www.reddit.com/user/nxll_/submitted/" target="_blank">reddit</a>
+        <a href="mailto:ibjornwulff@vivaldi.net">mail</a>
+        <a href="https://www.last.fm/user/bjornwulff" target="_blank">last.fm</a>
+        <a href="">  +  </a>
+    </div>
 
-	<div id="content">
-            <div id="contentblock">
-	            This is just for my own personal links/reference.<br>
-		        Right now I am just sprucing the place up a little, so apologies for the emptiness.
-            </div>
-            <div id="contentblock">
-                Random AI render:<br>
-                <img src="https://raw.githubusercontent.com/nxll/nxll.github.io/refs/heads/master/OIG2okobvf.jpg"</img>
-            </div>
-            <div id="contentblock">
-                <b>APPS</b></p>
-
-                # Music Player Daemon<br>
-                #mpd<br>
-                #mpc<br><p>
-
-                # Music Player<br>
-                #ncmpcpp<br>
-                #moc<br><p>
-
-                # Video<br>
-                #mpv<br>
-                #mplayer<br><p>
-
-                # Communication<br>
-                #weechat<br>
-                #neomutt<br>
-                #irssi<br><p>
-
-                # Editor<br>
-                #neovim<br>
-                #emacs<br><p>
-
-                # File Browser<br>
-                #ranger<br>
-                #mc<br><p>
-
-                # Web Browser<br>
-                #w3m<br>
-                #elinks<br><p>
-
-                # System Tools<br>
-                #btop<br>
-                #htop<br>
-                #ttyload<br>
-                #iotop<br><p>>
-
-                # Network<br>
-                #mullvad-cli<br>
-                #bmon<br>
-                #iftop<br>
-                #cnetworkmanager<br><p>>
-
-                # Misc<br>
-                #tmux<br>
-                #calcurse<br>
-                #transmission-cli<br>
-                #rtorrent<br>
-                #newsbeuter
+    <div id="content">
+        <div id="contentblock">
+            This is just for my own personal links/reference.<br>
+            Right now I am just sprucing the place up a little, so apologies for the emptiness.
         </div>
-	</div>
+
+        <div id="contentblock">
+            Random AI render:<br>
+            <img src="https://raw.githubusercontent.com/nxll/nxll.github.io/refs/heads/master/OIG2okobvf.jpg" alt="Random AI render">
+        </div>
+
+        <div id="contentblock">
+            <b>APPS</b></p>
+            # Music Player Daemon<br>
+            #mpd<br>
+            #mpc<br><p>
+
+            # Music Player<br>
+            #ncmpcpp<br>
+            #moc<br><p>
+
+            # Video<br>
+            #mpv<br>
+            #mplayer<br><p>
+
+            # Communication<br>
+            #weechat<br>
+            #neomutt<br>
+            #irssi<br><p>
+
+            # Editor<br>
+            #neovim<br>
+            #emacs<br><p>
+
+            # File Browser<br>
+            #ranger<br>
+            #mc<br><p>
+
+            # Web Browser<br>
+            #w3m<br>
+            #elinks<br><p>
+
+            # System Tools<br>
+            #btop<br>
+            #htop<br>
+            #ttyload<br>
+            #iotop<br><p>
+
+            # Network<br>
+            #mullvad-cli<br>
+            #bmon<br>
+            #iftop<br>
+            #cnetworkmanager<br><p>
+
+            # Misc<br>
+            #tmux<br>
+            #calcurse<br>
+            #transmission-cli<br>
+            #rtorrent<br>
+            #newsbeuter</p>
+        </div>
+    </div>
 
     <div id="footer">
         PGP: 2147 6DB4 83FC DA71 0EF7 AAE7 B1F7 0D72 6322 51CF <a href="https://keybase.io/nxll/pgp_keys.asc" target="_blank">DL</a>
