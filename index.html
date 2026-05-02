@@ -1,189 +1,289 @@
 <!DOCTYPE html>
-
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BJRNULFR</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BJRNULFR</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Fira+Code" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
 
-<style type="text/css">   
+  <style>
+    :root {
+      --bg: #21211F;
+      --panel: #292927;
+      --link: #2E2E2C;
+      --text: #B8B9B4;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-        background: #21211F;
-        color: #B8B9B4;
-        font-family: 'Fira Code', monospace;
-        font-size: 12px;
-        -webkit-font-smoothing : none;
-        font-smooth: never;
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Fira Code", monospace;
+      font-size: 12px;
+      line-height: 1.45;
     }
 
-    pre {
-        font-family: 'Fira Code', monospace;
-        font-size: 12px;
-        -webkit-font-smoothing: none;
-        font-smooth: never;
+    a {
+      display: inline-block;
+      background: var(--link);
+      color: var(--text);
+      padding: 4px;
+      text-decoration: none;
+      transition: 0.25s ease;
     }
-    
-    a, a:visited, a:active {
-        background: #2E2E2C;
-        color: #B8B9B4;
-        font: inherit;
-        padding: 4px;
-        text-decoration: none;
+
+    a:visited,
+    a:active {
+      color: var(--text);
     }
-    
+
     a:hover {
-        background: #B8B9B4;
-        color: #2E2E2C;
-        -o-transition:.5s;
-        -ms-transition:.5s;
-        -moz-transition:.5s;
-        -webkit-transition:.5s;
-        transition:.5s;
-    }
-    
-    a.bt {
-        background: #B8B9B4;
-        color: #2E2E2C;
-    }
-    
-    a.bt:hover {
-        background: #2E2E2C;
-        color: #B8B9B4;
-    }
-    
-    hr {
-        border-top: 1px dotted #292927;
-        text-decoration: none;
+      background: var(--text);
+      color: var(--link);
     }
 
     img {
-        width: 100%;
-        padding-top: 8px;
+      display: block;
+      width: 100%;
+      margin-top: 8px;
+      border: 1px solid var(--panel);
     }
 
-    #bar {
-        background: #292927;
-        position: fixed;
-        width: 100%;
-        padding: 8px;
-        top: 0px;
-        left: 0px;
-        z-index: 1;
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      width: 100%;
+      padding: 8px;
+      background: var(--panel);
     }
 
-    #content {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-        gap: 10px;
-        padding-top: 40px;
-        padding-bottom: 30px;
-        margin-left: 10px;
-        margin-right: 10px;
-        z-index: 0;
+    .brand {
+      background: var(--text);
+      color: var(--link);
+      font-weight: bold;
     }
 
-    #contentblock {
-        border: 2px solid #292927;
-        padding: 20px;
-        box-sizing: border-box;
-        transition: all .3s ease-in-out;
+    .brand:hover {
+      background: var(--link);
+      color: var(--text);
     }
 
-    #footer {
-        background: #21211F;
-        position: fixed;
-        width: 100%;
-        bottom: 0px;
-        left: 0px;
-        padding: 8px;
-        z-index: 1;
+    main {
+      padding: 48px 10px 90px;
+      column-width: 360px;
+      column-gap: 10px;
     }
-</style>
+
+    .block {
+      display: inline-block;
+      width: 100%;
+      margin: 0 0 10px;
+      padding: 18px;
+      border: 2px solid var(--panel);
+      background: transparent;
+      break-inside: avoid;
+    }
+
+    .block h2 {
+      margin: 0 0 12px;
+      font-size: 12px;
+      color: var(--text);
+    }
+
+    .block p {
+      margin: 0 0 10px;
+    }
+
+    .block p:last-child {
+      margin-bottom: 0;
+    }
+
+    .app-group {
+      margin-bottom: 14px;
+    }
+
+    .app-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .app-group strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    li::before {
+      content: "#";
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      z-index: 10;
+      width: 100%;
+      padding: 8px;
+      background: var(--bg);
+      border-top: 1px dotted var(--panel);
+    }
+
+    @media (max-width: 500px) {
+      main {
+        column-width: auto;
+        column-count: 1;
+      }
+
+      header a {
+        margin-bottom: 4px;
+      }
+
+      footer {
+        position: static;
+      }
+
+      main {
+        padding-bottom: 20px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <div id="bar">
-        <b><a href="https://nxll.github.io" class="bt">BJRNULFR</a></b>
-        <a href="https://github.com/nxll" target="_blank">github</a>
-        <a href="https://twitter.com/ibjornulfr" target="_blank">x</a>
-        <a href="https://www.reddit.com/user/nxll_/submitted/" target="_blank">reddit</a>
-        <a href="mailto:ibjornwulff@vivaldi.net">mail</a>
-        <a href="https://www.last.fm/user/bjornwulff" target="_blank">last.fm</a>
-        <a href="">  +  </a>
-    </div>
+  <header>
+    <a class="brand" href="https://nxll.github.io">BJRNULFR</a>
+    <a href="https://github.com/nxll" target="_blank" rel="noopener noreferrer">github</a>
+    <a href="https://twitter.com/ibjornulfr" target="_blank" rel="noopener noreferrer">x</a>
+    <a href="https://www.reddit.com/user/nxll_/submitted/" target="_blank" rel="noopener noreferrer">reddit</a>
+    <a href="mailto:ibjornwulff@vivaldi.net">mail</a>
+    <a href="https://www.last.fm/user/bjornwulff" target="_blank" rel="noopener noreferrer">last.fm</a>
+    <a href="#">+</a>
+  </header>
 
-    <div id="content">
-        <div id="contentblock">
-            This is just for my own personal links/reference.<br>
-            Right now I am just sprucing the place up a little, so apologies for the emptiness.
-        </div>
+  <main>
+    <section class="block">
+      <p>This is just for my own personal links/reference.</p>
+      <p>Right now I am just sprucing the place up a little, so apologies for the emptiness.</p>
+    </section>
 
-        <div id="contentblock">
-            Random AI render:<br>
-            <img src="https://raw.githubusercontent.com/nxll/nxll.github.io/refs/heads/master/OIG2okobvf.jpg" alt="Random AI render">
-        </div>
+    <section class="block">
+      <h2>Random AI render:</h2>
+      <img src="https://raw.githubusercontent.com/nxll/nxll.github.io/refs/heads/master/OIG2okobvf.jpg" alt="Random AI render">
+    </section>
 
-        <div id="contentblock">
-            <b>APPS</b></p>
-            # Music Player Daemon<br>
-            #mpd<br>
-            #mpc<br><p>
+    <section class="block">
+      <h2>APPS</h2>
 
-            # Music Player<br>
-            #ncmpcpp<br>
-            #moc<br><p>
+      <div class="app-group">
+        <strong># Music Player Daemon</strong>
+        <ul>
+          <li>mpd</li>
+          <li>mpc</li>
+        </ul>
+      </div>
 
-            # Video<br>
-            #mpv<br>
-            #mplayer<br><p>
+      <div class="app-group">
+        <strong># Music Player</strong>
+        <ul>
+          <li>ncmpcpp</li>
+          <li>moc</li>
+        </ul>
+      </div>
 
-            # Communication<br>
-            #weechat<br>
-            #neomutt<br>
-            #irssi<br><p>
+      <div class="app-group">
+        <strong># Video</strong>
+        <ul>
+          <li>mpv</li>
+          <li>mplayer</li>
+        </ul>
+      </div>
 
-            # Editor<br>
-            #neovim<br>
-            #emacs<br><p>
+      <div class="app-group">
+        <strong># Communication</strong>
+        <ul>
+          <li>weechat</li>
+          <li>neomutt</li>
+          <li>irssi</li>
+        </ul>
+      </div>
 
-            # File Browser<br>
-            #ranger<br>
-            #mc<br><p>
+      <div class="app-group">
+        <strong># Editor</strong>
+        <ul>
+          <li>neovim</li>
+          <li>emacs</li>
+        </ul>
+      </div>
 
-            # Web Browser<br>
-            #w3m<br>
-            #elinks<br><p>
+      <div class="app-group">
+        <strong># File Browser</strong>
+        <ul>
+          <li>ranger</li>
+          <li>mc</li>
+        </ul>
+      </div>
 
-            # System Tools<br>
-            #btop<br>
-            #htop<br>
-            #ttyload<br>
-            #iotop<br><p>
+      <div class="app-group">
+        <strong># Web Browser</strong>
+        <ul>
+          <li>w3m</li>
+          <li>elinks</li>
+        </ul>
+      </div>
 
-            # Network<br>
-            #mullvad-cli<br>
-            #bmon<br>
-            #iftop<br>
-            #cnetworkmanager<br><p>
+      <div class="app-group">
+        <strong># System Tools</strong>
+        <ul>
+          <li>btop</li>
+          <li>htop</li>
+          <li>ttyload</li>
+          <li>iotop</li>
+        </ul>
+      </div>
 
-            # Misc<br>
-            #tmux<br>
-            #calcurse<br>
-            #transmission-cli<br>
-            #rtorrent<br>
-            #newsbeuter</p>
-        </div>
+      <div class="app-group">
+        <strong># Network</strong>
+        <ul>
+          <li>mullvad-cli</li>
+          <li>bmon</li>
+          <li>iftop</li>
+          <li>cnetworkmanager</li>
+        </ul>
+      </div>
 
-        <div id="contentblock">
-            THIS IS A TEST
-        </div>
-        
-    </div>
+      <div class="app-group">
+        <strong># Misc</strong>
+        <ul>
+          <li>tmux</li>
+          <li>calcurse</li>
+          <li>transmission-cli</li>
+          <li>rtorrent</li>
+          <li>newsbeuter</li>
+        </ul>
+      </div>
+    </section>
 
-    <div id="footer">
-        BTC: bc1q3je2gwudjl54stjqvz245tm96pa3q3hayychtl<br>
-        ETH: 0xE4c9D0F4AcF4704a82e51ac57557263928F1a046<br>
-        PGP: 2147 6DB4 83FC DA71 0EF7 AAE7 B1F7 0D72 6322 51CF <a href="https://keybase.io/nxll/pgp_keys.asc" target="_blank">DL</a>
-    </div>
+    <section class="block">
+      <p>THIS IS A TEST</p>
+    </section>
+  </main>
+
+  <footer>
+    BTC: bc1q3je2gwudjl54stjqvz245tm96pa3q3hayychtl<br>
+    ETH: 0xE4c9D0F4AcF4704a82e51ac57557263928F1a046<br>
+    PGP: 2147 6DB4 83FC DA71 0EF7 AAE7 B1F7 0D72 6322 51CF
+    <a href="https://keybase.io/nxll/pgp_keys.asc" target="_blank" rel="noopener noreferrer">DL</a>
+  </footer>
 </body>
+</html>
